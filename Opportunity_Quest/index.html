@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Opportunity Quest | Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="auth">
+  <header class="top-nav">
+    <div class="logo">Opportunity<span>Quest</span></div>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+    </nav>
+  </header>
+
+  <main class="auth-layout">
+    <!-- Left: Hero / About -->
+    <section class="auth-hero">
+      <h1>Never miss the right opportunity again.</h1>
+      <p>
+        Opportunity Quest centralizes research roles, internships and academic
+        calls in one dashboard for students, professors and admins.
+      </p>
+      <ul class="hero-list">
+        <li>🎓 Smart filters for students</li>
+        <li>👩‍🏫 Simple publishing for faculty</li>
+        <li>🛡 Verified postings via admin review</li>
+      </ul>
+    </section>
+
+    <!-- Right: Auth Card -->
+    <section class="auth-card">
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-mode="login">Login</button>
+        <button class="auth-tab" data-mode="register">Register</button>
+      </div>
+
+      <form id="authForm" class="form">
+        <div class="form-row">
+          <label for="role">I am a</label>
+          <select id="role" name="role" required>
+            <option value="student">Student</option>
+            <option value="professor">Professor</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Institutional Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@university.edu" />
+        </div>
+
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" minlength="6" required />
+        </div>
+
+        <div class="form-row form-row--register hidden" id="nameRow">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Your name" />
+        </div>
+
+        <button type="submit" class="btn primary-btn" id="authSubmitBtn">
+          Continue
+        </button>
+
+
+
+        <!-- Google auth placeholder -->
+        <div class="divider">
+          <span>or</span>
+        </div>
+
+        <button type="button" class="btn google-btn" id="googleSignInBtn">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="" />
+          Continue with Google
+        </button>
+        <p class="form-helper tiny"></p>
+      </form>
+    </section>
+  </main>
+
+  <section id="about" class="info-section">
+    <h2>Built for academic ecosystems</h2>
+    <p>
+      Professors publish once, students discover instantly, and admins keep everything verified
+      and clean. Opportunity Quest removes the chaos of scattered emails and WhatsApp forwards.
+    </p>
+  </section>
+
+  <section id="features" class="info-section info-grid">
+    <article class="info-card">
+      <h3>For Students</h3>
+      <p>Filter by department, skills and deadlines. Bookmark and track opportunities in one place.</p>
+    </article>
+    <article class="info-card">
+      <h3>For Professors</h3>
+      <p>Post research calls, project openings and internships in a few clicks and see engagement stats.</p>
+    </article>
+    <article class="info-card">
+      <h3>For Admins</h3>
+      <p>Approve faculty, monitor activity and keep institutional standards intact.</p>
+    </article>
+  </section>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> Opportunity Quest. For academic use only.</small>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

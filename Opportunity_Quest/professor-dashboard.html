@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Professor Dashboard | Opportunity Quest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="professor">
+  <header class="app-header">
+    <div class="logo">Opportunity<span>Quest</span></div>
+    <nav class="app-nav">
+      <span class="pill" id="profNamePill">Professor</span>
+      <button class="btn ghost-btn" id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <main class="app-layout app-layout--stack">
+    <section class="content">
+      <header class="content-header">
+        <div>
+          <h1>Create Opportunity</h1>
+          <p class="muted">Post research, projects or internships for your students.</p>
+        </div>
+      </header>
+
+      <form id="createOpportunityForm" class="form two-column-form">
+        <div class="form-row">
+          <label for="oppTitle">Title</label>
+          <input type="text" id="oppTitle" required />
+        </div>
+
+        <div class="form-row">
+          <label for="oppType">Type</label>
+          <select id="oppType" required>
+            <option value="Research">Research</option>
+            <option value="Internship">Internship</option>
+            <option value="Project">Project</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="oppDept">Department</label>
+          <select id="oppDept" required>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="ME">ME</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="oppDeadline">Deadline</label>
+          <input type="date" id="oppDeadline" required />
+        </div>
+
+        <div class="form-row form-row--full">
+          <label for="oppDesc">Description</label>
+          <textarea id="oppDesc" rows="4" required></textarea>
+        </div>
+
+        <div class="form-row form-row--full">
+          <label for="oppEligibility">Eligibility / Requirements</label>
+          <textarea id="oppEligibility" rows="3"></textarea>
+        </div>
+
+        <div class="form-row form-row--full align-right">
+          <button type="submit" class="btn primary-btn">
+            Publish opportunity
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="content">
+      <header class="content-header">
+        <div>
+          <h2>Your Opportunities</h2>
+          <p class="muted">Active and expired listings created by you.</p>
+        </div>
+      </header>
+
+      <div id="profOppList" class="card-grid">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <section class="content">
+      <header class="content-header">
+        <div>
+          <h2>Applications Received</h2>
+          <p class="muted">Review student applications and update their status.</p>
+        </div>
+      </header>
+
+      <div id="profApplicationsList" class="card-list">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <div class="toast" id="toast"></div>
+  </main>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

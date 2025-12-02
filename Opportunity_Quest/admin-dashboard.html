@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel | Opportunity Quest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="admin">
+  <header class="app-header">
+    <div class="logo">Opportunity<span>Quest</span></div>
+    <nav class="app-nav">
+      <span class="pill">Admin</span>
+      <button class="btn ghost-btn" id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <main class="app-layout app-layout--stack">
+    <section class="content">
+      <header class="content-header">
+        <div>
+          <h1>Professor Verification</h1>
+          <p class="muted">
+            Approve or reject faculty accounts to keep postings trusted.
+          </p>
+        </div>
+      </header>
+
+      <div id="pendingProfList" class="card-list">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <section class="content">
+      <header class="content-header">
+        <div>
+          <h2>Platform Snapshot</h2>
+          <p class="muted">High-level counts for demo purposes.</p>
+        </div>
+      </header>
+
+      <div class="stats-grid" id="statsGrid">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <div class="toast" id="toast"></div>
+  </main>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Dashboard | Opportunity Quest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="student">
+  <header class="app-header">
+    <div class="logo">Opportunity<span>Quest</span></div>
+    <nav class="app-nav">
+      <span class="pill" id="studentNamePill">Student</span>
+      <button class="btn ghost-btn" id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <main class="app-layout">
+    <aside class="sidebar">
+      <h2>Filters</h2>
+      <div class="form-row">
+        <label for="searchQuery">Search</label>
+        <input type="text" id="searchQuery" placeholder="Title, keyword…" />
+      </div>
+
+      <div class="form-row">
+        <label for="departmentFilter">Department</label>
+        <select id="departmentFilter">
+          <option value="">All</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="ME">ME</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="typeFilter">Type</label>
+        <select id="typeFilter">
+          <option value="">All</option>
+          <option value="Research">Research</option>
+          <option value="Internship">Internship</option>
+          <option value="Project">Project</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="sortBy">Sort by</label>
+        <select id="sortBy">
+          <option value="deadline">Deadline</option>
+          <option value="recent">Recently added</option>
+        </select>
+      </div>
+
+      <button class="btn secondary-btn full-width" id="clearFiltersBtn">
+        Clear filters
+      </button>
+
+      <hr />
+      <h3>My Bookmarks</h3>
+      <ul id="bookmarkList" class="bookmark-list">
+        <!-- Filled by JS -->
+      </ul>
+
+      <hr />
+      <h3>My Applications</h3>
+      <ul id="applicationsList" class="bookmark-list">
+        <!-- Filled by JS -->
+      </ul>
+    </aside>
+
+    <section class="content">
+      <header class="content-header">
+        <div>
+          <h1>Explore Opportunities</h1>
+          <p class="muted">
+            Filtered list of active postings from your professors.
+          </p>
+        </div>
+        <span class="badge" id="resultCountBadge">0 results</span>
+      </header>
+
+      <div id="opportunityGrid" class="card-grid">
+        <!-- Cards injected by JS -->
+      </div>
+
+      <template id="opportunityCardTemplate">
+        <article class="card opportunity-card">
+          <div class="card-header-row">
+            <h3 class="opp-title"></h3>
+            <button class="icon-btn bookmark-btn" title="Bookmark">
+              ★
+            </button>
+          </div>
+          <p class="opp-meta"></p>
+          <p class="opp-desc"></p>
+          <div class="card-footer-row">
+            <span class="chip deadline-chip"></span>
+            <button class="btn small-btn apply-btn">Apply</button>
+          </div>
+        </article>
+      </template>
+    </section>
+  </main>
+
+  <!-- Simple modal for "Apply" -->
+  <div class="modal hidden" id="applyModal">
+    <div class="modal-content">
+      <h2>Apply to opportunity</h2>
+      <p id="applyModalTitle" class="modal-title"></p>
+      <form id="applyForm" class="form">
+        <div class="form-row">
+          <label for="resumeLink">Resume / Portfolio link</label>
+          <input type="url" id="resumeLink" required placeholder="https://…" />
+        </div>
+        <div class="form-row">
+          <label for="note">Short note (optional)</label>
+          <textarea id="note" rows="3"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn ghost-btn" id="cancelApplyBtn">
+            Cancel
+          </button>
+          <button type="submit" class="btn primary-btn">
+            Submit application
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
